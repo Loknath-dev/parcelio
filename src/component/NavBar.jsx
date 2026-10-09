@@ -1,5 +1,4 @@
 import {
-  Barcode,
   ChevronDown,
   LogOut,
   Menu,
@@ -105,6 +104,7 @@ export default function Navbar() {
     setProfile(false);
     setNotify(false);
   };
+  const navigate = useNavigate();
 
   return (
     <>
@@ -113,14 +113,24 @@ export default function Navbar() {
           <div className="px-4 sm:px-6">
             <div className="flex h-16 items-center justify-between">
               {/* Brand */}
-              <div className="group flex cursor-pointer items-center gap-3.5">
-                <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-linear-to-tr from-slate-900 via-slate-800 to-indigo-950 text-white shadow-md shadow-indigo-950/20 transition duration-300 group-hover:scale-105 group-hover:rotate-3">
-                  <Barcode size={21} />
+
+              <div
+                onClick={() => {
+                  navigate("/");
+                }}
+                className="group flex cursor-pointer items-center gap-3.5"
+              >
+                <div className="flex h-11 w-11  items-center justify-center rounded-2xl  text-white  transition-all duration-300 group-hover:scale-105 group-hover:rotate-3">
+                  <img
+                    src="icons.svg"
+                    alt="Parceilo Gen"
+                    className="mt-2 h-full w-full object-contain"
+                  />
                 </div>
 
                 <div>
                   <h1 className="text-sm font-bold tracking-tight text-slate-900">
-                    Barcode<span className="text-indigo-600">.</span>Gen
+                    Parceilo<span className="text-indigo-600">.</span>Gen
                   </h1>
 
                   <p className="hidden text-[11px] font-medium text-slate-400 sm:block">
@@ -185,7 +195,6 @@ export default function Navbar() {
                   )}
                 </div>
               </div>
-
               {/* Mobile */}
               <div className="flex items-center gap-2 sm:hidden">
                 <div className="relative" ref={notifyRef}>
