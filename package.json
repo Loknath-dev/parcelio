@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://loknath-dev.github.io/parcelio/",
+  "homepage": "https://loknath-dev.github.io/parcelio",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
