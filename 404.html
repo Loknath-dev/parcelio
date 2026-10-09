@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <script>
+      const path = window.location.pathname;
+      const base = "/parcelio";
+
+      if (path.startsWith(base + "/")) {
+        sessionStorage.redirect = path.slice(base.length);
+      }
+
+      window.location.replace(base + "/");
+    </script>
+  </head>
+  <body></body>
+</html>
